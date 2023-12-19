@@ -1,11 +1,11 @@
 //main.js
 
-import { getEstoque, transacao } from "./estoque.js";
+import { getEstoque, transacaoNoEstoque, limpaEstoque } from "./estoque.js";
 
 document.entrada.addEventListener('submit', leFormulario);
 
-const olJoao = document.querySelector("#olJoao");
-const olMaria = document.querySelector("#olMaria");
+const olJoao = document.querySelector("#joao");
+const olMaria = document.querySelector("#maria");
 
 atualizaTela();
 
@@ -16,16 +16,20 @@ function leFormulario(event){
     const origem = document.entrada.origem.value;
     const destino= document.entrada.destino.value;
 
-    console.log(`Solicitado: ${origem} doa ${quantidade} ${fruta} para ${destino}`);
+    console.log(`solicitado: ${origem} doa ${quantidade} ${fruta} para ${destino}`);
 
     //document.entrada.submit();
 
-    transacao(origem, destino, quantidade, fruta);
+    transacaoNoEstoque(origem, destino, quantidade, fruta);
     atualizaTela();
 }
 
 function atualizaTela() {
     const estoque = getEstoque();
+
+    document.entrada.value="maca";
+    document.quantidade.value=1;
+    
     preencheListaPessoa(estoque['joao'], olJoao);
     preencheListaPessoa(estoque['maria'], olMaria);
 }
