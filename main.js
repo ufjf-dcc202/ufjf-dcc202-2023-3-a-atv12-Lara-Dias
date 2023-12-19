@@ -45,3 +45,10 @@ function preencheListaPessoa(pessoa, lista) {
         }
     }
 }
+
+document.addEventListener('DOMContentLoaded',()=>{
+    document.getElementById('botaoLimparLista').addEventListener('click',()=>{
+        limpaEstoque();
+        atualizaTela();
+    })
+})

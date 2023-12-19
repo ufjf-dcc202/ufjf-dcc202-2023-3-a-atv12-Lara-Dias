@@ -1,12 +1,16 @@
 //estoque.js
 
 let estoque ={
-    'joao': [{'tipo': "maca", 'qtd': 1}],   
-    'maria': [{tipo: "maca", 'qtd': 2}]
+    'joao': [{'tipo': 'maca', 'qtd': 1}],   
+    'maria': [{'tipo': 'maca', 'qtd': 2}]
 };
 
 export function getEstoque(){
     return structuredClone(estoque); //clona a estrutura do estoque para não ser alterada fora da função
+}
+
+export function limpaEstoque(){
+    estoque={};
 }
 
 export function transacaoNoEstoque(origem, destino, quantidade, fruta){
