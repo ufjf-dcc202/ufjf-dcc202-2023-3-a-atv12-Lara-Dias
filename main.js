@@ -27,8 +27,8 @@ function leFormulario(event){
 function atualizaTela() {
     const estoque = getEstoque();
 
-    document.entrada.value="maca";
-    document.quantidade.value=1;
+    document.entrada.fruta.value="maca";
+    document.entrada.quantidade.value= 1;
 
     preencheListaPessoa(estoque['joao'], olJoao);
     preencheListaPessoa(estoque['maria'], olMaria);
