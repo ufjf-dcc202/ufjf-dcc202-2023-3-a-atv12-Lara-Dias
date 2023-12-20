@@ -20,7 +20,7 @@ function leFormulario(event){
 
     //document.entrada.submit();
 
-    transacaoNoEstoque(origem, destino, quantidade, fruta);
+    transacaoNoEstoque(origem, destino, fruta, quantidade);
     atualizaTela();
 }
 
